@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+<p>top</p>
+<div class="js" >https://gist.github.com/maxpromer/4f942b7bec0df87692874f3953fa7173.js</div>
+
+<div id="add" ></div>
+
+</div>
+<p>middle</p>
+<div class="js">https://gist.github.com/maxpromer/4f942b7bec0df87692874f3953fa7173.js</div>
+
+<div class="block"></div>
+</div>
+<p>bottom</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+	<script>
+
+	    var js = document.getElementsByClassName('js');
+	    var jsUrl = document.getElementsByClassName('js')[0].innerHTML;
+	      
+		// var script = '\x3Cscript type="text/javascript" src="'+jsUrl+'">\x3C/script>';
+
+		var sc = document.createElement("script"); 
+		sc.type = 'text/javascript';
+		sc.src = jsUrl;
+
+		for(var i=0; i<js.length; i++){
+			js[i].innerHTML = "";
+			postscribe(js[i], sc.outerHTML);
+			console.log(document.getElementsByClassName('js')[i]);
+		}   
+
+	</script>
+
+</body>
+</html>
